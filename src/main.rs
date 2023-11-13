@@ -9,19 +9,19 @@ use termimad::{Area, MadSkin};
 struct Cli {
     files: Vec<PathBuf>,
     #[command(subcommand)]
-    /// render inside the give bo
+    /// Render inside the give bounds
     command: Option<CliCommand>,
     #[arg(long, action = ArgAction::SetTrue)]
-    /// Optimise colors for black on white terminals
+    /// Optimize colors for black on white terminals
     light: bool,
     #[arg(long, action = ArgAction::SetTrue)]
-    /// Dont display colors
+    /// Don't display colors/formatting
     no_color: bool,
 }
 
 #[derive(Subcommand)]
 enum CliCommand {
-    /// Fit content in spezified bounds
+    /// Fit content in specified bounds
     Area {
         left: u16,
         top: u16,

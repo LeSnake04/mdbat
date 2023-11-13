@@ -2,6 +2,10 @@
 name = "mdbat"
 version = "0.1.0"
 edition = "2021"
+authors = ["LeSnake <dev.lesnake@posteo.de>"]
+description = "A simple and fancy way to to display markdown documents in your terminal (based on termimad)"
+categories = ["command-line-utilities"]
+keywords = ["markdown", "md", "cat", "cli", "less"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
