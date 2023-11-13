@@ -7,7 +7,7 @@ description = "A simple and fancy way to to display markdown documents in your t
 categories = ["command-line-utilities"]
 keywords = ["markdown", "md", "cat", "cli", "less"]
 repository = "https://github.com/LeSnake04/mdbat"
-license = "AGPL-v3"
+license = "AGPL-3.0-or-later"
 publish =  true
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
