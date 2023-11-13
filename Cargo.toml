@@ -13,6 +13,6 @@ publish =  true
 
 [dependencies]
 anyhow = "1.0.75"
-atty = "0.2.14"
 clap = { version = "4.4.7", features = ["derive", "cargo"] }
+is-terminal = "0.4.9"
 termimad = "0.26.1"

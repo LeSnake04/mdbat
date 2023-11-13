@@ -32,8 +32,8 @@ enum CliCommand {
 
 fn main() -> Result<()> {
     let cli = Cli::parse();
-    let is_tty = atty::is(atty::Stream::Stdout);
-    let skin = match (cli.light, !cli.no_color, is_tty) {
+    let is_terminal = is_terminal::is_terminal(std::io::stdout());
+    let skin = match (cli.light, !cli.no_color, is_terminal) {
         (false, true, _) => MadSkin::default_dark(),
         (true, true, _) => MadSkin::default_light(),
         (_, _, false) | (_, false, _) => MadSkin::no_style(),
