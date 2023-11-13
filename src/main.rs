@@ -33,10 +33,10 @@ enum CliCommand {
 fn main() -> Result<()> {
     let cli = Cli::parse();
     let is_tty = atty::is(atty::Stream::Stdout);
-    let skin = match (cli.light, !cli.no_color || is_tty) {
-        (false, true) => MadSkin::default_dark(),
-        (true, true) => MadSkin::default_light(),
-        (_, false) => MadSkin::no_style(),
+    let skin = match (cli.light, !cli.no_color, is_tty) {
+        (false, true, _) => MadSkin::default_dark(),
+        (true, true, _) => MadSkin::default_light(),
+        (_, _, false) | (_, false, _) => MadSkin::no_style(),
     };
     for file in &cli.files {
         let content = read_to_string(file).context("Failed to read file")?;
